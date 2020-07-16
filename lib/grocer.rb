@@ -25,7 +25,5 @@ def consolidate_cart(unconsolidated_cart)
           end
         end
       end
-    end
-  end
   new_cart
 end 
