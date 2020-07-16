@@ -19,7 +19,7 @@ def consolidate_cart(unconsolidated_cart)
         new_cart << hash 
       else 
         new_cart.each do |new_hash|
-            if new_value == value
+            if new_hash[:item] == value
               new_hash[:count] += 1 
             end
           end
