@@ -13,8 +13,7 @@ end
 def consolidate_cart(unconsolidated_cart)
   new_cart = []
   unconsolidated_cart.each do |hash|
-    hash.each do |key, value|
-      cart_item = find_item_by_name_in_collection(value, new_cart)
+      cart_item = find_item_by_name_in_collection(hash[:item], new_cart)
       if cart_item == nil 
         new_item = hash 
         new_item[:count] = 1 
