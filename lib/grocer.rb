@@ -14,14 +14,15 @@ def consolidate_cart(unconsolidated_cart)
   new_cart = []
   unconsolidated_cart.each do |hash|
     hash.each do |key, value|
-      matching_value = find_item_by_name_in_collection(value, new_cart)
-      if !matching_value
-        new_cart << hash 
-        new_cart[-1][:count] = 1 
-      else
+      cart_item = find_item_by_name_in_collection(value, new_cart)
+      if cart_item == nil 
+        new_item = hash 
+        new_item[:count] = 1 
+        new_cart << new_item 
+      else 
         new_cart.each do |new_hash|
           new_hash.each do |new_key, new_value|
-            if new_value == value 
+            if new_value == value
               new_hash[:count] += 1 
             end
           end
