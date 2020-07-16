@@ -1,5 +1,6 @@
+require 'pry'
 require_relative 'grocer'
-
+require binding.pry 
 def items
 	[
 		{"AVOCADO" => {:price => 3.00, :clearance => true}},
